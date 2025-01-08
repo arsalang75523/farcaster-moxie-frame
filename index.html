@@ -3,33 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Poll Frame</title>
+  <title>Base Moxie Earnings</title>
   
-  <!-- Open Graph Meta Tags for Farcaster -->
-  <meta property="og:title" content="Polls Frame" />
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Base Moxie Earnings" />
   <meta property="og:image" content="https://fc-polls.vercel.app/api/image?id=054aee65-c63d-46c1-a1f9-a05b747860f6" />
   
   <!-- Farcaster Frame Meta Tags -->
+  <meta property="fc:frame" content="vNext" />
   <meta property="fc:frame:image" content="https://proxy.wrpcd.net/?url=https%3A%2F%2Ffc-polls.vercel.app%2Fapi%2Fimage%3Fid%3D054aee65-c63d-46c1-a1f9-a05b747860f6&s=1464559bb873852d35b8272bb9a01a94e27ed65db05d624d3561d82fac486fb2" />
   <meta property="fc:frame:post_url" content="https://fc-polls.vercel.app/api/vote?id=054aee65-c63d-46c1-a1f9-a05b747860f6" />
-
-  <!-- Buttons to vote in the poll -->
-  <meta property="fc:frame:button:1:type" content="post" />
-  <meta property="fc:frame:button:1:title" content="Option 1" />
   
-  <meta property="fc:frame:button:2:type" content="post" />
-  <meta property="fc:frame:button:2:title" content="Option 2" />
+  <!-- Buttons for Voting -->
+  <meta property="fc:frame:button:1" content="Option 1" />
+  <meta property="fc:frame:button:1:action" content="post" />
   
-  <meta property="fc:frame:button:3:type" content="post" />
-  <meta property="fc:frame:button:3:title" content="Option 3" />
+  <meta property="fc:frame:button:2" content="Option 2" />
+  <meta property="fc:frame:button:2:action" content="post" />
   
-  <meta property="fc:frame:button:4:type" content="post" />
-  <meta property="fc:frame:button:4:title" content="Option 4" />
+  <meta property="fc:frame:button:3" content="Option 3" />
+  <meta property="fc:frame:button:3:action" content="post" />
+  
+  <meta property="fc:frame:button:4" content="Option 4" />
+  <meta property="fc:frame:button:4:action" content="post" />
   
   <link rel="stylesheet" href="/src/style.css">
 </head>
 <body>
-  <h1>Poll Frame</h1>
+  <h1>Base Moxie Earnings</h1>
 
   <!-- Poll Image -->
   <img src="https://fc-polls.vercel.app/api/image?id=054aee65-c63d-46c1-a1f9-a05b747860f6" alt="Poll Image" style="width: 100%; max-width: 600px;">
