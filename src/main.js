@@ -52,11 +52,11 @@ const sendToFarcaster = (embedUrl) => {
   window.open(farcasterUrl, '_blank');
 };
 
-// رویداد دکمه‌ها
-btn1.addEventListener('click', () => sendToFarcaster('https://app.airstack.xyz/query/oK3b0Zx0bp'));
-btn2.addEventListener('click', () => sendToFarcaster('https://app.airstack.xyz/query/oK3b0Zx0bp'));
-btn3.addEventListener('click', () => sendToFarcaster('https://app.airstack.xyz/query/oK3b0Zx0bp'));
-btn4.addEventListener('click', () => sendToFarcaster('https://app.airstack.xyz/query/oK3b0Zx0bp'));
+// رویداد دکمه‌ها (لینک‌ها و ارسال URL به سرور)
+btn1.addEventListener('click', () => sendToFarcaster('https://api.airstack.xyz/graphql'));
+btn2.addEventListener('click', () => sendToFarcaster('https://api.airstack.xyz/graphql'));
+btn3.addEventListener('click', () => sendToFarcaster('https://api.airstack.xyz/graphql'));
+btn4.addEventListener('click', () => sendToFarcaster('https://api.airstack.xyz/graphql'));
 
 // رویداد دکمه "Share"
 shareButton.addEventListener('click', () => {
