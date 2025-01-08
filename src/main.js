@@ -6,6 +6,12 @@ const shareButton = document.getElementById('share-btn');
 const fidInput = document.getElementById('fid-input');
 const moxieDataContainer = document.getElementById('moxie-data');
 
+// دکمه‌ها
+const btn1 = document.getElementById('btn1');
+const btn2 = document.getElementById('btn2');
+const btn3 = document.getElementById('btn3');
+const btn4 = document.getElementById('btn4');
+
 // تابع برای نمایش داده‌ها
 const renderData = (data) => {
   moxieDataContainer.innerHTML = data.map(item => `
@@ -31,10 +37,6 @@ showInfoButton.addEventListener('click', async () => {
     const data = await fetchData(fid); // ارسال درخواست با Fid
     if (data) {
       renderData(data); // نمایش داده‌ها
-      // ارسال داده‌ها به Farcaster با URL Intent
-      const farcasterUrl = `https://warpcast.com/~/compose?text=Check%20this%20out!&embeds[]=${encodeURIComponent('https://s7.gifyu.com/images/SX0E7.png')}`;
-      console.log('Farcaster URL:', farcasterUrl);
-      // به راحتی می‌توانید این لینک را برای اشتراک‌گذاری استفاده کنید
     } else {
       alert('No data found for this Fid');
     }
@@ -44,11 +46,23 @@ showInfoButton.addEventListener('click', async () => {
   }
 });
 
+// ارسال URL به Farcaster با Embed های مختلف
+const sendToFarcaster = (embedUrl) => {
+  const farcasterUrl = `https://warpcast.com/~/compose?text=Check%20this%20out!&embeds[]=${encodeURIComponent(embedUrl)}`;
+  window.open(farcasterUrl, '_blank');
+};
+
+// رویداد دکمه‌ها
+btn1.addEventListener('click', () => sendToFarcaster('https://fc-polls.vercel.app/api/vote?id=054aee65-c63d-46c1-a1f9-a05b747860f6'));
+btn2.addEventListener('click', () => sendToFarcaster('https://fc-polls.vercel.app/api/vote?id=054aee65-c63d-46c1-a1f9-a05b747860f6'));
+btn3.addEventListener('click', () => sendToFarcaster('https://fc-polls.vercel.app/api/vote?id=054aee65-c63d-46c1-a1f9-a05b747860f6'));
+btn4.addEventListener('click', () => sendToFarcaster('https://fc-polls.vercel.app/api/vote?id=054aee65-c63d-46c1-a1f9-a05b747860f6'));
+
 // رویداد دکمه "Share"
 shareButton.addEventListener('click', () => {
   const data = moxieDataContainer.innerHTML;
   const farcasterUrl = `https://warpcast.com/~/compose?text=Check%20this%20out!&embeds[]=${encodeURIComponent('https://s7.gifyu.com/images/SX0E7.png')}`;
-  
+
   if (navigator.share) {
     navigator.share({
       title: 'Base Moxie Earnings Data',
