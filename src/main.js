@@ -1,4 +1,4 @@
-import { fetchData } from './api.js'; // وارد کردن تابع fetchData از api.js
+import { fetchData } from './api.js'; // فرض می‌کنیم که api.js اطلاعات را از سرور می‌گیرد
 
 // گرفتن المان‌ها
 const showInfoButton = document.getElementById('show-info-btn');
@@ -53,15 +53,15 @@ const sendToFarcaster = (embedUrl) => {
 };
 
 // رویداد دکمه‌ها
-btn1.addEventListener('click', () => sendToFarcaster('https://fc-polls.vercel.app/api/vote?id=054aee65-c63d-46c1-a1f9-a05b747860f6'));
-btn2.addEventListener('click', () => sendToFarcaster('https://fc-polls.vercel.app/api/vote?id=054aee65-c63d-46c1-a1f9-a05b747860f6'));
-btn3.addEventListener('click', () => sendToFarcaster('https://fc-polls.vercel.app/api/vote?id=054aee65-c63d-46c1-a1f9-a05b747860f6'));
-btn4.addEventListener('click', () => sendToFarcaster('https://fc-polls.vercel.app/api/vote?id=054aee65-c63d-46c1-a1f9-a05b747860f6'));
+btn1.addEventListener('click', () => sendToFarcaster('https://example.com/api/vote'));
+btn2.addEventListener('click', () => sendToFarcaster('https://example.com/api/vote'));
+btn3.addEventListener('click', () => sendToFarcaster('https://example.com/api/vote'));
+btn4.addEventListener('click', () => sendToFarcaster('https://example.com/api/vote'));
 
 // رویداد دکمه "Share"
 shareButton.addEventListener('click', () => {
   const data = moxieDataContainer.innerHTML;
-  const farcasterUrl = `https://warpcast.com/~/compose?text=Check%20this%20out!&embeds[]=${encodeURIComponent('https://fc-polls.vercel.app/api/image?id=054aee65-c63d-46c1-a1f9-a05b747860f6')}`;
+  const farcasterUrl = `https://warpcast.com/~/compose?text=Check%20this%20out!&embeds[]=${encodeURIComponent('https://example.com/images/moxie-earnings.png')}`;
 
   if (navigator.share) {
     navigator.share({
