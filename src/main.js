@@ -1,12 +1,12 @@
-import { fetchData } from './api.js'; // فرض می‌کنیم که api.js همانطور که قبلاً گفته شد ساخته شده است
+import { fetchData } from './api.js'; // وارد کردن تابع fetchData از api.js
 
-// Get the buttons and input field
+// گرفتن المان‌ها
 const showInfoButton = document.getElementById('show-info-btn');
 const shareButton = document.getElementById('share-btn');
 const fidInput = document.getElementById('fid-input');
 const moxieDataContainer = document.getElementById('moxie-data');
 
-// Function to display the data
+// تابع برای نمایش داده‌ها
 const renderData = (data) => {
   moxieDataContainer.innerHTML = data.map(item => `
     <div>
@@ -16,10 +16,10 @@ const renderData = (data) => {
       <p><strong>Timeframe:</strong> ${item.timeframe}</p>
     </div>
   `).join('');
-  shareButton.style.display = 'block'; // Show the share button after data is loaded
+  shareButton.style.display = 'block'; // نشان دادن دکمه "Share" بعد از بارگذاری داده‌ها
 };
 
-// Event listener for the "Show Info" button
+// رویداد دکمه "Show Info"
 showInfoButton.addEventListener('click', async () => {
   const fid = fidInput.value.trim();
   if (!fid) {
@@ -28,9 +28,9 @@ showInfoButton.addEventListener('click', async () => {
   }
 
   try {
-    const data = await fetchData(fid); // Call the API with Fid as parameter
+    const data = await fetchData(fid); // ارسال درخواست با Fid
     if (data) {
-      renderData(data);
+      renderData(data); // نمایش داده‌ها
     } else {
       alert('No data found for this Fid');
     }
@@ -40,7 +40,7 @@ showInfoButton.addEventListener('click', async () => {
   }
 });
 
-// Event listener for the "Share" button
+// رویداد دکمه "Share"
 shareButton.addEventListener('click', () => {
   const data = moxieDataContainer.innerHTML;
   if (navigator.share) {

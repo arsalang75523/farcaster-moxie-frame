@@ -1,12 +1,18 @@
 import { GraphQLClient } from 'graphql-request';
 
-const endpoint = 'https://api.airstack.xyz/graphql';
+// URL و کلید API
+const endpoint = 'https://app.airstack.xyz/query/oK3b0Zx0bp';
+const apiKey = '13827f8b8c521443da97ed54d4d6a891d';
+
+// ایجاد نمونه GraphQLClient
 const client = new GraphQLClient(endpoint, {
   headers: {
-    'Authorization': `Bearer YOUR_API_KEY`, // جایگزین کردن API Key خودتان
+    'Authorization': `Bearer ${apiKey}`,
+    'Content-Type': 'application/json',  // معمولا لازم است که نوع محتوا مشخص شود
   },
 });
 
+// کوئری GraphQL برای دریافت داده‌ها
 const query = `
   query BaseMoxieEarningForFarcasterAccounts {
     FarcasterMoxieEarningStats(
@@ -23,8 +29,9 @@ const query = `
   }
 `;
 
-export const fetchData = async () => {
+export const fetchData = async (fid) => {
   try {
+    // ارسال درخواست GraphQL با کوئری
     const data = await client.request(query);
     return data.FarcasterMoxieEarningStats.FarcasterMoxieEarningStat;
   } catch (error) {
