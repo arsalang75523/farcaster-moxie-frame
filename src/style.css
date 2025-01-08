@@ -1,0 +1,174 @@
+/* Body Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #6e7dff, #3c4bf1); /* Gradient Background */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Header Styling */
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: white;
+}
+
+/* Input Styling */
+.input-field {
+  padding: 12px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 25px;
+  width: 250px;
+  margin-bottom: 20px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-field:focus {
+  border: 2px solid #3c4bf1;
+}
+
+/* Button Styling */
+.btn {
+  background-color: #3c4bf1;
+  color: white;
+  font-size: 1.2rem;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  width: 250px;
+}
+
+.btn:hover {
+  background-color: #5f6bf2;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(2px);
+}
+
+/* Container for Moxie Data */
+#moxie-data {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 80%;
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+#moxie-data:hover {
+  transform: translateY(-10px);
+}
+
+#moxie-data div {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#moxie-data div:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+#moxie-data p {
+  font-size: 1.1rem;
+  color: #ddd;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+/* Custom Logo Styling (Cooked by) */
+#custom-logo {
+  background: linear-gradient(135deg, #ff8e8e, #ffdb80); /* Gradient Background */
+  color: #fff;
+  padding: 15px;
+  margin-top: 30px;
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#custom-logo p {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+
+#custom-logo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Logo "Cooked by" text */
+#custom-logo strong {
+  color: #3c4bf1; /* Blue color for @arsalang75523 */
+}
+
+/* Logo Animation */
+#custom-logo p {
+  transition: color 0.3s ease;
+}
+
+#custom-logo:hover p {
+  color: #ffdb80; /* Change color when hovered */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  #moxie-data {
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  img {
+    width: 150px;
+  }
+
+  #custom-logo {
+    width: 80%;
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "farcaster-moxie-frame",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.0.5"
+  },
+  "dependencies": {
+    "graphql-request": "^7.1.2"
+  }
+}
