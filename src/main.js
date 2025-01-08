@@ -53,15 +53,15 @@ const sendToFarcaster = (embedUrl) => {
 };
 
 // رویداد دکمه‌ها
-btn1.addEventListener('click', () => sendToFarcaster('https://example.com/api/vote'));
-btn2.addEventListener('click', () => sendToFarcaster('https://example.com/api/vote'));
-btn3.addEventListener('click', () => sendToFarcaster('https://example.com/api/vote'));
-btn4.addEventListener('click', () => sendToFarcaster('https://example.com/api/vote'));
+btn1.addEventListener('click', () => sendToFarcaster('https://yourwebsite.com/api/vote'));
+btn2.addEventListener('click', () => sendToFarcaster('https://yourwebsite.com/api/vote'));
+btn3.addEventListener('click', () => sendToFarcaster('https://yourwebsite.com/api/vote'));
+btn4.addEventListener('click', () => sendToFarcaster('https://yourwebsite.com/api/vote'));
 
 // رویداد دکمه "Share"
 shareButton.addEventListener('click', () => {
   const data = moxieDataContainer.innerHTML;
-  const farcasterUrl = `https://warpcast.com/~/compose?text=Check%20this%20out!&embeds[]=${encodeURIComponent('https://example.com/images/moxie-earnings.png')}`;
+  const farcasterUrl = `https://warpcast.com/~/compose?text=Check%20this%20out!&embeds[]=${encodeURIComponent('https://yourwebsite.com/images/moxie-earnings.png')}`;
 
   if (navigator.share) {
     navigator.share({
