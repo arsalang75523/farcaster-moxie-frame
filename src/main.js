@@ -37,10 +37,6 @@ showInfoButton.addEventListener('click', async () => {
     const data = await fetchData(fid); // ارسال درخواست با Fid
     if (data) {
       renderData(data); // نمایش داده‌ها
-      // ارسال داده‌ها به Farcaster با URL Intent
-      const farcasterUrl = `https://warpcast.com/~/compose?text=Check%20this%20out!&embeds[]=${encodeURIComponent('https://fc-polls.vercel.app/api/image?id=054aee65-c63d-46c1-a1f9-a05b747860f6')}`;
-      console.log('Farcaster URL:', farcasterUrl);
-      // به راحتی می‌توانید این لینک را برای اشتراک‌گذاری استفاده کنید
     } else {
       alert('No data found for this Fid');
     }
