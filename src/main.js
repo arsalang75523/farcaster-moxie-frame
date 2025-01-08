@@ -16,7 +16,7 @@ const renderData = (data) => {
       <p><strong>Timeframe:</strong> ${item.timeframe}</p>
     </div>
   `).join('');
-  shareButton.style.display = 'block'; // نشان دادن دکمه "Share" بعد از بارگذاری داده‌ها
+  shareButton.style.display = 'block'; // نمایش دکمه "Share" بعد از بارگذاری داده‌ها
 };
 
 // رویداد دکمه "Show Info"
@@ -31,6 +31,10 @@ showInfoButton.addEventListener('click', async () => {
     const data = await fetchData(fid); // ارسال درخواست با Fid
     if (data) {
       renderData(data); // نمایش داده‌ها
+      // ارسال داده‌ها به Farcaster با URL Intent
+      const farcasterUrl = `https://warpcast.com/~/compose?text=Check%20this%20out!&embeds[]=${encodeURIComponent('https://s7.gifyu.com/images/SX0E7.png')}`;
+      console.log('Farcaster URL:', farcasterUrl);
+      // به راحتی می‌توانید این لینک را برای اشتراک‌گذاری استفاده کنید
     } else {
       alert('No data found for this Fid');
     }
@@ -43,11 +47,13 @@ showInfoButton.addEventListener('click', async () => {
 // رویداد دکمه "Share"
 shareButton.addEventListener('click', () => {
   const data = moxieDataContainer.innerHTML;
+  const farcasterUrl = `https://warpcast.com/~/compose?text=Check%20this%20out!&embeds[]=${encodeURIComponent('https://s7.gifyu.com/images/SX0E7.png')}`;
+  
   if (navigator.share) {
     navigator.share({
       title: 'Base Moxie Earnings Data',
       text: 'Check out this awesome Farcaster data!',
-      url: document.location.href,
+      url: farcasterUrl,
     }).catch(console.error);
   } else {
     alert('Sharing is not supported in this browser.');
